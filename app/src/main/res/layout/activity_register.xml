@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/signUpTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:layout_marginTop="30dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+           />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:hint="Full Name"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+             />
+
+        <EditText
+            android:id="@+id/ageEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Age"
+            android:layout_marginTop="20dp"
+            android:inputType="number"
+            android:padding="10dp"
+            />
+
+        <RadioGroup
+            android:id="@+id/RG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:layout_marginStart="20dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+            <RadioButton
+                android:layout_marginTop="10dp"
+                android:id="@+id/maleRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"/>
+            <RadioButton
+                android:id="@+id/femaleRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="female"/>
+            <RadioButton
+                android:id="@+id/otherRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Others"/>
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/addressEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Address"
+            android:inputType="textPostalAddress"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+           />
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:padding="12dp"
+            android:background="@color/cardview_dark_background"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
