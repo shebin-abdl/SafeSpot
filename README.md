@@ -29,7 +29,4 @@ Battery Optimization: Implement additional energy-saving techniques to reduce ba
 Contributing
 Contributions are welcome! Please fork the repository, create a branch for any changes, and submit a pull request.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for more information.
 
-This description should provide potential users and contributors with a clear understanding of the app’s purpose, features, and setup.
