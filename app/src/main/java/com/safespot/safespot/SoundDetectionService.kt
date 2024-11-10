@@ -47,7 +47,6 @@ class SoundDetectionService : Service() {
         val channelId = "SoundDetectionServiceChannel"
         val channelName = "Sound Detection Service"
 
-        // For Android O and above, create a notification channel
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_DEFAULT)
             val manager = getSystemService(NotificationManager::class.java)
@@ -62,7 +61,6 @@ class SoundDetectionService : Service() {
     }
 
     private fun startAudioDetection() {
-        // Check for microphone permission
         Log.d(page,"Sound detection started")
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             return
@@ -87,7 +85,7 @@ class SoundDetectionService : Service() {
                 if (readCount > 0) {
                     if (detectScream(audioBuffer)) {
                         triggerEmergencyResponse()
-                        break // Stop after detecting a scream (optional)
+                        break
                     }
                 }
             }
@@ -194,7 +192,7 @@ class SoundDetectionService : Service() {
 
     override fun onDestroy() {
         super.onDestroy()
-        isDetecting = false  // Stops the detection thread
+        isDetecting = false
         audioRecord.stop()
         audioRecord.release()
     }

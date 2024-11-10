@@ -20,7 +20,6 @@ class PhoneCallHelper {
         private const val REQUEST_CODE_CALL_PHONE = 101
         private const val REQUEST_CODE_SEND_SMS = 102
 
-        // Function to make a phone call
         fun callPhoneNumber(context: Context, phoneNumber: String,sharedPreferences:SharedPreferences) {
             if (ActivityCompat.checkSelfPermission(
                     context,

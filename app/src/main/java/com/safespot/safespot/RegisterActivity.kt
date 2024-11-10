@@ -27,7 +27,6 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        // Initialize UI elements
         nameEditText = findViewById(R.id.nameEditText)
         ageEditText = findViewById(R.id.ageEditText)
         genderRadioGroup = findViewById(R.id.RG)
@@ -56,8 +55,6 @@ class RegisterActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
-    // Function to save data to SharedPreferences
     private fun saveUserData(name: String, age: String, gender: String, address: String) {
         val editor = sharedPreferences.edit()
         editor.putString("name", name)
@@ -73,10 +70,10 @@ class RegisterActivity : AppCompatActivity() {
 
         val sharedPreferences = getSharedPreferences("UserDetails", Context.MODE_PRIVATE)
 
-        val name = sharedPreferences.getString("name", "Default Name") // Default value if not found
-        val age = sharedPreferences.getString("age", "0") // Default value if not found
-        val gender = sharedPreferences.getString("gender", "Not Specified") // Default value if not found
-        val address = sharedPreferences.getString("address", "Not Specified") // Default value if not found
+        val name = sharedPreferences.getString("name", "Default Name")
+        val age = sharedPreferences.getString("age", "0")
+        val gender = sharedPreferences.getString("gender", "Not Specified")
+        val address = sharedPreferences.getString("address", "Not Specified")
 
         Log.d("UserData", "Name: $name, Age: $age, Gender: $gender, Address: $address")
 

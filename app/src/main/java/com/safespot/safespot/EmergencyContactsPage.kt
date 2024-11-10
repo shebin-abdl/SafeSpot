@@ -38,13 +38,11 @@ class EmergencyContactsPage : AppCompatActivity() {
         setContentView(R.layout.activity_emergency_contacts_page)
 
 
-        // Initialize the views
         emergencyNameEditText = findViewById(R.id.emergencyNameEditText)
         emergencyPhoneEditText = findViewById(R.id.emergencyPhoneEditText)
         emergencyRelationshipEditText = findViewById(R.id.emergencyRelationshipEditText)
         saveButton = findViewById(R.id.saveButton)
 
-        // Set click listener for Save button
         dispaly()
         saveButton.setOnClickListener {
             saveEmergencyContact()
@@ -66,26 +64,19 @@ class EmergencyContactsPage : AppCompatActivity() {
 
         }
     }
-    // Function to save emergency contact data
     private fun saveEmergencyContact() {
-        // Get the input data
         val emergencyName = emergencyNameEditText.text.toString()
         val emergencyPhone = emergencyPhoneEditText.text.toString()
         val emergencyRelationship = emergencyRelationshipEditText.text.toString()
 
-        // Save data to SharedPreferences
         val sharedPreferences = getSharedPreferences("EmergencyContactDetails", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
 
-        // Put data into SharedPreferences
         editor.putString("emergencyName", emergencyName)
         editor.putString("emergencyPhone", emergencyPhone)
         editor.putString("emergencyRelationship", emergencyRelationship)
-
-        // Commit the changes
         editor.apply()
 
-        // Show a confirmation message
         Toast.makeText(this, "Emergency contact saved!", Toast.LENGTH_SHORT).show()
         dispaly()
     }
